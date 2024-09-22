@@ -1,9 +1,16 @@
 variable "ami_id" {
-  ami_id = "ami-037774efca2da0726"
-  type        = string
+  description = "AMI ID"
 }
 
 variable "region" {
-  region = "us-east-2"
-  type        = string
+  description = "AWS region"
+}
+
+locals {
+  availability_zone = {
+    "us-east-1" = "us-east-1a"
+    "us-east-2" = "us-east-2a"
+    "us-west-1" = "us-west-1b"
+    "us-west-2" = "us-west-2c"
+  }
 }
